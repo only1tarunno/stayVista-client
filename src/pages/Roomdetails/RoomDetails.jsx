@@ -3,6 +3,9 @@ import Container from "../../components/Shared/Container";
 import { useEffect, useState } from "react";
 import Loader from "../../components/Shared/Loader";
 import { Helmet } from "react-helmet-async";
+import Header from "../../components/RoomDetails.jsx/Header";
+import RoomInfo from "../../components/RoomDetails.jsx/RoomInfo";
+import Reservation from "../../components/RoomDetails.jsx/Reservation";
 
 const RoomDetails = () => {
   const { id } = useParams();
@@ -25,10 +28,17 @@ const RoomDetails = () => {
       <Helmet>
         <title>{room?.title}</title>
       </Helmet>
-      <div>
-        <div className="flex flex-col gap-6">{/* header  */}</div>
-        <div className="">{/* room info */}</div>
-        {/* calender  */}
+      <div className="max-w-screen-lg mx-auto">
+        <div className="flex flex-col gap-6">
+          <Header roomData={room}></Header>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-7 gap-3 py-10">
+          <RoomInfo roomData={room}></RoomInfo>
+
+          <div className=" md:col-span-3 order-first md:order-last">
+            <Reservation room={room}></Reservation>
+          </div>
+        </div>
       </div>
     </Container>
   );
