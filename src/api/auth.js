@@ -17,6 +17,11 @@ export const saveUser = async (user) => {
 // ad token in datbase
 export const getToken = async (email) => {
   const { data } = await axiosSecure.post("/jwt", email);
-  console.log(data);
+  return data;
+};
+
+// rermove token
+export const clearToken = async () => {
+  const { data } = await axiosSecure.get("/logout");
   return data;
 };

@@ -26,7 +26,6 @@ const Rooms = () => {
         setLoadind(false);
       });
   }, [categoryFromUrl]);
-  console.log(rooms);
 
   if (loading) return <Loader></Loader>;
   return (

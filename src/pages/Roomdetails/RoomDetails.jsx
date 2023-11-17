@@ -19,7 +19,6 @@ const RoomDetails = () => {
         const singleroom = data.find((room) => room._id === id);
         setRoom(singleroom);
         setLoadind(false);
-        console.log(singleroom);
       });
   }, [id]);
   if (loading) return <Loader></Loader>;

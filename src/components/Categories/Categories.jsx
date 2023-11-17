@@ -6,7 +6,7 @@ import CategoryBox from "./CategoryBox";
 const Categories = () => {
   const [params] = useSearchParams();
   const categoryFromUrl = params.get("category");
-  console.log(categoryFromUrl);
+
   return (
     <Container>
       <div className="py-4 flex gap-1 items-center justify-between overflow-x-auto">

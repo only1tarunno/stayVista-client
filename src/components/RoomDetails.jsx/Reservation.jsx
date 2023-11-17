@@ -10,7 +10,7 @@ const Reservation = ({ room }) => {
     enddate: new Date(room?.to),
     key: "selection",
   });
-  console.log(value);
+
   const totalDays = formatDistance(
     new Date(room?.to),
     new Date(room?.from)
