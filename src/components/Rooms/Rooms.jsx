@@ -12,7 +12,7 @@ const Rooms = () => {
   const [loading, setLoadind] = useState(true);
   useEffect(() => {
     setLoadind(true);
-    fetch("rooms.json")
+    fetch("http://localhost:8000/rooms")
       .then((res) => res.json())
       .then((data) => {
         if (categoryFromUrl) {

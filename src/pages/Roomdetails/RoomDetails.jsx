@@ -9,15 +9,15 @@ import Reservation from "../../components/RoomDetails.jsx/Reservation";
 
 const RoomDetails = () => {
   const { id } = useParams();
+
   const [room, setRoom] = useState({});
   const [loading, setLoadind] = useState(true);
   useEffect(() => {
     setLoadind(true);
-    fetch("/rooms.json")
+    fetch(`http://localhost:8000/rooms/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        const singleroom = data.find((room) => room._id === id);
-        setRoom(singleroom);
+        setRoom(data);
         setLoadind(false);
       });
   }, [id]);
